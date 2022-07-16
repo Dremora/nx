@@ -3,7 +3,7 @@ import {
   InternalDocSearchHit,
   StoredDocSearchHit,
 } from '@docsearch/react/dist/esm/types';
-import { SearchIcon } from '@heroicons/react/solid';
+import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -82,15 +82,15 @@ export function AlgoliaSearch(): JSX.Element {
         type="button"
         ref={searchButtonRef}
         onClick={handleOpen}
-        className="flex w-full items-center rounded-md py-1.5 pl-2 pr-3 text-sm leading-6 text-slate-300 ring-1 ring-slate-600 transition hover:text-slate-200 hover:ring-slate-500"
+        className="flex w-full items-center rounded-md bg-white py-1.5 px-2 text-sm leading-4 ring-1 ring-slate-300 transition dark:bg-slate-700 dark:ring-slate-900"
       >
-        <SearchIcon className="h-4 w-4 flex-none md:mr-3" />
-        <span className="mx-3 hidden lg:inline-flex">
-          <span className="hidden lg:inline">Quick </span>search
+        <MagnifyingGlassIcon className="h-4 w-4 flex-none" />
+        <span className="mx-3 text-slate-300 dark:text-slate-400 lg:inline-flex">
+          Search Documentation...
         </span>
         <span
           style={{ opacity: browserDetected ? '1' : '0' }}
-          className="ml-auto hidden flex-none pl-3 text-xs font-semibold md:block"
+          className="ml-auto block flex-none rounded-md border border-slate-200 bg-slate-50 px-1 py-0.5 text-xs font-semibold text-slate-500 transition-opacity dark:border-slate-700 dark:bg-slate-800/60"
         >
           <span className="sr-only">Press </span>
           <kbd className="font-sans">
